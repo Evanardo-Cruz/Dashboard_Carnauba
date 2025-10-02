@@ -1,0 +1,125 @@
+/* -------------------------------------- */
+/* LAYOUT BASE E ESTILOS GERAIS */
+/* -------------------------------------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* Usa a altura total da janela, crucial para flexbox */
+    height: 100%; 
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f0; /* Areia clara */
+    color: #333;
+    
+    /* Configuração Flexbox para organizar os elementos verticalmente */
+    display: flex;
+    flex-direction: column; 
+}
+
+/* -------------------------------------- */
+/* HEADER - TEMA CARNAÚBA */
+/* -------------------------------------- */
+.main-header {
+    background-color: #2e8b57; /* Verde esmeralda */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #ffcc66; /* Palha/Ouro */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-shrink: 0; /* Impede o encolhimento do cabeçalho */
+}
+
+.main-header h1 {
+    margin: 0;
+    font-family: 'Georgia', serif; 
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+}
+
+.carnauba-icon {
+    font-size: 2rem;
+}
+
+/* -------------------------------------- */
+/* DASHBOARD CONTAINER (MAIN) */
+/* -------------------------------------- */
+.dashboard-container {
+    /* CRUCIAL: Faz o MAIN ocupar todo o espaço vertical restante */
+    flex-grow: 1; 
+    position: relative;
+    
+    width: 100%; 
+    max-width: 1400px; 
+    /* Margem vertical reduzida para maximizar o espaço */
+    margin: 15px auto; 
+    padding: 20px; /* Padding interno para a caixa branca */
+    
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; 
+
+    /* Configuração flex para garantir que o iframe preencha 100% da altura do main */
+    display: flex; 
+    flex-direction: column;
+}
+
+/* Estilo para o iFrame (Dashboard) */
+.dashboard-container iframe {
+    /* CRUCIAL: Ocupa 100% da área do container, que está em flex-grow: 1 */
+    width: 100%;
+    height: 100%;
+    /* O flex-grow no main e o height: 100% aqui resolvem o problema de espaço */
+    
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    min-height: 500px; /* Garante uma altura mínima para visualização em telas pequenas */
+}
+
+/* -------------------------------------- */
+/* SEÇÃO DE DOWNLOAD */
+/* -------------------------------------- */
+.download-section {
+    text-align: center;
+    margin: 20px auto; 
+    padding: 10px 20px;
+    border-top: 1px dashed #cccccc;
+    flex-shrink: 0; 
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Botão de Download - Tema Tronco/Palha */
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #8b4513; /* Marrom */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.download-button:hover {
+    background-color: #a0522d; 
+}
+
+/* -------------------------------------- */
+/* RODAPÉ */
+/* -------------------------------------- */
+.main-footer {
+    background-color: #2e8b57; 
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    flex-shrink: 0; /* Impede o encolhimento do rodapé */
+}

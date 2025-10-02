@@ -1,0 +1,150 @@
+/* Configurações básicas */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9; /* Cor de fundo suave */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1a4f78; /* Cor escura do Power BI */
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #f2c811; /* Cor de destaque do Power BI */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Tamanho da sua logo */
+    margin-right: 15px;
+    background-color: white; /* Fundo branco para logos escuras */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.header-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+/* Estilo do Dashboard e Main */
+main {
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.dashboard-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden; /* Garante que o iframe fique dentro do container */
+}
+
+.dashboard-container iframe {
+    display: block;
+    border: none;
+    min-height: 700px; /* Altura mínima para o dashboard ser visível */
+}
+
+/* Estilo dos Botões de Ação */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download {
+    background-color: #0078d4; /* Cor azul de download */
+    color: white;
+}
+
+.download:hover {
+    background-color: #005a9e;
+    transform: translateY(-2px);
+}
+
+.suggestions {
+    background-color: #f2c811; /* Cor amarela para formulário */
+    color: #333;
+}
+
+.suggestions:hover {
+    background-color: #e0b400;
+    transform: translateY(-2px);
+}
+
+/* Footer (Rodapé) */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 5%;
+    font-size: 0.8em;
+}
+
+/* Media Queries para Responsividade em telas menores */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .header-info p {
+        text-align: center;
+    }
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 80%; /* Botões ocupam mais espaço em telas pequenas */
+        justify-content: center;
+    }
+}
+
+/* Correção de CSS para garantir a remoção da barra inferior do Power BI */
+.dashboard-container iframe {
+    /* ... (Mantenha as propriedades existentes: display: block; border: none; min-height: 800px; ) */
+    
+    /* Aumenta a altura do iframe para que o conteúdo "passe" do contêiner */
+    height: 100vh !important; /* Exemplo: Usa 100% da altura da tela */
+    
+    /* E então esconde a parte inferior que sobra com a barra */
+    margin-bottom: -40px; /* Puxa o iframe para cima para esconder os últimos 40px (o tamanho da barra) */
+}
+
+/* Garante que o container limite o que aparece */
+.dashboard-container {
+    overflow: hidden; 
+    /* ... (Mantenha as propriedades existentes: box-shadow, background-color, etc.) */
+}
